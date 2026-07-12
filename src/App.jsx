@@ -1,23 +1,15 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-
-function BerandaKiosk() {
-  return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50">
-      <div className="text-center">
-        <h1 className="text-2xl font-semibold text-gray-800">
-          Layanan Arsip Diskarpus Kota Depok
-        </h1>
-        <p className="text-gray-500 mt-2">Halaman kiosk sedang disiapkan.</p>
-      </div>
-    </div>
-  );
-}
+import BerandaPage from "./app/beranda/BerandaPage";
+import CariArsipPage from "./app/cari/CariArsipPage";
+import AjukanPage from "./app/ajukan/AjukanPage";
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<BerandaKiosk />} />
+        <Route path="/" element={<BerandaPage />} />
+        <Route path="/cari" element={<CariArsipPage />} />
+        <Route path="/ajukan" element={<AjukanPage />} />
       </Routes>
     </BrowserRouter>
   );

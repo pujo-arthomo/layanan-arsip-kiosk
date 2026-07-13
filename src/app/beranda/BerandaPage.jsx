@@ -72,7 +72,7 @@ function BerandaPage() {
       </div>
 
       {/* Cara pengajuan - mengisi ruang bawah */}
-      <div className="flex-1 px-8 pt-4 pb-10">
+      <div className="flex-1 px-8 pt-4 pb-6">
         <p className="text-center text-sm font-bold text-[#1B4B3A] uppercase tracking-wide mb-5">
           Cara Pengajuan
         </p>
@@ -112,6 +112,23 @@ function BerandaPage() {
               </p>
             </div>
           </div>
+        </div>
+      </div>
+
+      {/* QR Code - Survey Kepuasan Masyarakat */}
+      <div className="px-8 pb-10 flex justify-center">
+        <div className="bg-white border border-[#EEE6D6] rounded-2xl p-5 flex flex-col items-center gap-3 max-w-xs">
+          <p className="font-bold text-[#1B4B3A] text-center">
+            Survey Kepuasan Masyarakat
+          </p>
+          <img
+            src="/img/qr-survey.png"
+            alt="QR Code Survey Kepuasan Masyarakat"
+            className="w-[280px] h-[280px] object-contain"
+          />
+          <p className="text-sm text-[#5C6B63] text-center">
+            Scan untuk bagikan pengalamanmu
+          </p>
         </div>
       </div>
     </div>

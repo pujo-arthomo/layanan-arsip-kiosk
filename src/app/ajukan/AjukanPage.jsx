@@ -3,10 +3,15 @@ import { Link } from "react-router-dom";
 import { ajukanPermohonan } from "../../services/publicService";
 
 function AjukanPage() {
-  const [form, setForm] = useState({ nama: "", domisili: "", keterangan: "" });
+  const [form, setForm] = useState({
+    nama: "",
+    domisili: "",
+    keterangan: "",
+    no_rekomendasi: "",
+  });
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState(null);
-  const [tiket, setTiket] = useState(null);
+  const [nomorLayanan, setNomorLayanan] = useState(null);
 
   function handleChange(field, value) {
     setForm((prev) => ({ ...prev, [field]: value }));
@@ -17,7 +22,7 @@ function AjukanPage() {
     setSaving(true);
     setError(null);
 
-    const { nomorTiket, error } = await ajukanPermohonan(form);
+    const { nomorLayanan: hasil, error } = await ajukanPermohonan(form);
 
     if (error) {
       setError(error.message);
@@ -25,20 +30,20 @@ function AjukanPage() {
       return;
     }
 
-    setTiket(nomorTiket);
+    setNomorLayanan(hasil);
     setSaving(false);
   }
 
-  if (tiket) {
+  if (nomorLayanan) {
     return (
       <div className="min-h-screen bg-gray-50 flex items-center justify-center p-6">
         <div className="bg-white border rounded-xl shadow p-8 max-w-md w-full text-center">
           <p className="text-gray-500">Permohonan kamu berhasil dikirim</p>
           <p className="text-sm text-gray-400 mt-1 mb-4">
-            Simpan atau foto nomor tiket ini
+            Simpan atau foto nomor layanan ini
           </p>
           <p className="text-4xl font-bold text-blue-600 tracking-wide">
-            {tiket}
+            {nomorLayanan}
           </p>
           <p className="text-sm text-gray-500 mt-4">
             Tunjukkan nomor ini ke petugas untuk menanyakan status permohonan.
@@ -93,6 +98,19 @@ function AjukanPage() {
               required
               value={form.domisili}
               onChange={(e) => handleChange("domisili", e.target.value)}
+              className="w-full border px-4 py-3 rounded-lg text-lg"
+            />
+          </div>
+
+          <div>
+            <label className="block text-sm text-gray-600 mb-1">
+              Nomor Rekomendasi (dari PTSP)
+            </label>
+            <input
+              type="text"
+              required
+              value={form.no_rekomendasi}
+              onChange={(e) => handleChange("no_rekomendasi", e.target.value)}
               className="w-full border px-4 py-3 rounded-lg text-lg"
             />
           </div>

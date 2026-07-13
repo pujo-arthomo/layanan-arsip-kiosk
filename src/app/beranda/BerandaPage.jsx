@@ -10,21 +10,12 @@ function BerandaPage() {
         Dinas Kearsipan dan Perpustakaan Kota Depok
       </p>
 
-      <div className="w-full max-w-md space-y-4">
-        <Link
-          to="/cari"
-          className="block w-full text-center bg-blue-600 text-white text-lg font-medium py-6 rounded-xl shadow hover:bg-blue-700"
-        >
-          Cari Arsip
-        </Link>
-
-        <Link
-          to="/ajukan"
-          className="block w-full text-center bg-white border-2 border-blue-600 text-blue-600 text-lg font-medium py-6 rounded-xl shadow hover:bg-blue-50"
-        >
-          Ajukan Permohonan
-        </Link>
-      </div>
+      <Link
+        to="/ajukan"
+        className="w-full max-w-md text-center bg-blue-600 text-white text-xl font-medium py-8 rounded-xl shadow hover:bg-blue-700"
+      >
+        Ajukan Permohonan
+      </Link>
     </div>
   );
 }

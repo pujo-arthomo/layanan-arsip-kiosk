@@ -3,17 +3,17 @@ import { Link } from "react-router-dom";
 function BerandaPage() {
   return (
     <div className="min-h-screen w-full bg-[#FBF3E4] flex flex-col">
-      {/* Header: logo kiri-kanan */}
-      <div className="flex items-center justify-between px-10 pt-8 pb-2">
+      {/* Header: logo - stack di layar sempit, sejajar di layar lebar (kiosk) */}
+      <div className="flex flex-col sm:flex-row items-center justify-center sm:justify-between gap-3 sm:gap-0 px-6 sm:px-10 pt-8 pb-2">
         <img
           src="/img/logo-diskarpus.png"
           alt="Logo Dinas Kearsipan dan Perpustakaan Kota Depok"
-          className="max-w-[340px] max-h-[100px] object-contain object-left"
+          className="max-w-[280px] sm:max-w-[340px] max-h-[90px] sm:max-h-[100px] object-contain"
         />
         <img
           src="/img/logo-berakhlak.png"
           alt="Logo ASN BerAKHLAK"
-          className="max-w-[280px] max-h-[90px] object-contain object-right"
+          className="max-w-[220px] sm:max-w-[280px] max-h-[75px] sm:max-h-[90px] object-contain"
         />
       </div>
 
